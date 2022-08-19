@@ -28,3 +28,19 @@ document.getElementById('buttons').addEventListener('click',function(event){
         typedNumber.value = newTypedNumber; 
     }
 })
+
+document.getElementById('btn-verify').addEventListener('click', function(){
+    const currentPin = document.getElementById('display-pin').value;
+    const typedNumber = document.getElementById('typed-numbers').value;
+    
+    const pinSuccessMsg = document.getElementById('pin-success');
+    const pinWrongMsg = document.getElementById('pin-wrong');
+    if( typedNumber === currentPin){
+        pinSuccessMsg.style.display = 'block';
+        pinWrongMsg.style.display = 'none';
+    }
+    else{
+        pinWrongMsg.style.display = 'block';
+        pinSuccessMsg.style.display = 'none';
+    }
+})
